@@ -1,3 +1,4 @@
+"""See README.md"""
 FILENAME = "wordle-allowed-guesses.txt"  # File to read in
 
 # Initialize our data structs
@@ -6,8 +7,8 @@ occurences_b = {}
 occurences_c = {}
 occurences_d = {}
 occurences_e = {}
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-for char in list(alphabet):
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+for char in list(ALPHABET):
     occurences_a[char] = 0
     occurences_b[char] = 0
     occurences_c[char] = 0
@@ -15,7 +16,7 @@ for char in list(alphabet):
     occurences_e[char] = 0
 
 # Populate frequency for each char pos
-with open(FILENAME) as f:
+with open(FILENAME, "r", encoding="utf-8") as f:
     lines = f.readlines()
     for line in lines:
         word = line.strip()
@@ -29,7 +30,7 @@ with open(FILENAME) as f:
 
 # Calculate word scores
 scores = {}
-with open(FILENAME) as f:
+with open(FILENAME, "r", encoding="utf-8") as f:
     lines = f.readlines()
     for line in lines:
         word = line.strip()
